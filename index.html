@@ -188,7 +188,8 @@ let center=null, centerLabel='', cat=CATS[0], results=[], map=null, markers=[], 
 let favs=LS.get('fs_favs',{});
 
 /* ---------- API key & Maps loader ---------- */
-const getKey=()=>LS.get('fs_key','');
+const DEFAULT_KEY="AIzaSyAfdkBzgxSWCzG45MLL6gKA5yqxXZifji8";
+const getKey=()=>LS.get('fs_key','')||DEFAULT_KEY;
 function showKey(on){$('keyBg').classList.toggle('on',on); if(on){$('keyIn').value='';setTimeout(()=>$('keyIn').focus(),50)}}
 function loadMaps(key){
   return new Promise((res,rej)=>{
